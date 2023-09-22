@@ -15,6 +15,7 @@ You declare a variable using the `var`, `let`, or `const` keyword. The choice of
 
 - `const`: Variables declared with `const` are also block-scoped, but their values cannot be reassigned once they are set. This is useful for defining constants.
 
+
 ```javascript
 function exampleScope() {
   // Variable declared with var - function-scoped
@@ -37,4 +38,68 @@ function exampleScope() {
   // constVar is not accessible here - causes an error
   console.log(constVar); // Error: constVar is not defined
 }
+
+
+
+// JavaScript Map Functions
+
+// Create a Map
+const myMap = new Map();
+
+// Add key-value pairs
+myMap.set('key1', 'value1');
+myMap.set('key2', 'value2');
+
+// Get a value by key
+const value = myMap.get('key1'); // Retrieves 'value1'
+
+// Check if a key exists
+const keyExists = myMap.has('key3'); // Returns false
+
+// Delete a key-value pair
+myMap.delete('key2'); // Deletes the 'key2' entry
+
+// Clear all entries
+myMap.clear(); // Removes all entries from the map
+
+// Get the number of entries
+const mapSize = myMap.size; // Returns the number of entries
+
+// Iterate through keys
+const keysIterator = myMap.keys();
+for (const key of keysIterator) {
+  console.log(key); // Iterates through keys
+}
+
+// Iterate through values
+const valuesIterator = myMap.values();
+for (const value of valuesIterator) {
+  console.log(value); // Iterates through values
+}
+
+// Iterate through key-value pairs
+const entriesIterator = myMap.entries();
+for (const [key, value] of entriesIterator) {
+  console.log(`Key: ${key}, Value: ${value}`);
+}
+
+// Additional Map Functions
+
+// Map.prototype.forEach(callbackFn[, thisArg])
+// Executes a provided function once for each key-value pair in the Map, in insertion order.
+myMap.set('name', 'Alice');
+myMap.set('age', 30);
+myMap.forEach((value, key) => {
+  console.log(`Key: ${key}, Value: ${value}`);
+});
+
+// Map.prototype[Symbol.iterator]()
+// Returns a new Iterator object that contains an array of [key, value] for each element in the Map object.
+const mapEntries = [...myMap];
+console.log(mapEntries);
+
+// Map.prototype.get(key)
+// Returns the value associated with the specified key or undefined if the key does not exist.
+const nonExistentValue = myMap.get('nonExistentKey'); // Returns undefined
+
 
