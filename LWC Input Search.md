@@ -1,6 +1,7 @@
 # LWC-JS-Cheetsheet
 
 # HTML:
+```
 <template>
     <lightning-card title="Contact Data">
         <lightning-input type="text" label="Enter some text" onchange={onvaluechange}></lightning-input>
@@ -9,8 +10,10 @@
         </template>
     </lightning-card>
 </template>
+```
 
 # JS:
+```
 import { LightningElement, track, wire } from 'lwc';
 import searchbyname from'@salesforce/apex/searchonaccountname.searchbyname'
 
@@ -29,9 +32,9 @@ export default class CaseHierarchyComponent extends LightningElement {
         this.accountname = event.target.value;
     }
 }
-
+```
 # LWC Apex:
-
+```
 public with sharing class searchonaccountname {
       @AuraEnabled(cacheable=true)
     public static List<Account> searchbyname(String searchinit){
@@ -39,7 +42,7 @@ public with sharing class searchonaccountname {
         return [Select id, Name from Account where Name Like :keystring ];           
     }
 }
-
+```
 
 
 # Output:
