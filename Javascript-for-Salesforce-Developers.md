@@ -1,11 +1,11 @@
 <div align="center"> <h1>LWC-JS-Cheatsheet</h1></div>
 
-# JavaScript Variables
+## JavaScript Variables
 
 In JavaScript, variables are used to store and manage data. Variables are like containers that hold values, and you can give them names so you can reference and manipulate those values later in your code. 
 some important things know about variables in JavaScript:
 
-## Variable Declaration
+# Variable Declaration
 
 You declare a variable using the `var`, `let`, or `const` keyword. The choice of which keyword to use depends on how you want the variable to behave.
 
@@ -39,7 +39,25 @@ function exampleScope() {
   console.log(constVar); // Error: constVar is not defined
 }
 ```
+<br/>
+<br/>
 
+## JavaScript Operators Cheatsheet
+# Arithmetic Operators
+- Addition: `+`
+- Subtraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Modulus (Remainder): `%`
+- Increment: `++`
+- Decrement: `--`
+
+
+<br/>
+<br/>
+
+## Difference between == and ===
+<img width="826" alt="Screenshot 2023-09-22 122357" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components/assets/119065314/9466fe00-743b-408e-8220-0013b3080e90">
 
 <br/>
 <br/>
@@ -189,4 +207,7 @@ export default class MyLWCComponent extends LightningElement {
   }
 }
 ```
+
+
+
 
