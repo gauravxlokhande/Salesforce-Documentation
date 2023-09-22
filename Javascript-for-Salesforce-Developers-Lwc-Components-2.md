@@ -110,4 +110,76 @@ console.log(status); // Outputs: "Adult"
 ```
 
 
-## Loops in 
+## Loops in js
+
+# Basic for Loop:
+```
+for (let i = 0; i < 5; i++) {
+  console.log(i); // Outputs: 0, 1, 2, 3, 4
+}
+```
+# for...in Loop:
+
+```
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30
+};
+
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}
+// Outputs:
+// firstName: John
+// lastName: Doe
+// age: 30
+```
+# for...of Loop:
+```
+const colors = ["red", "green", "blue"];
+
+for (let color of colors) {
+  console.log(color);
+}
+// Outputs:
+// red
+// green
+// blue
+```
+
+# for Each Loop in LWC-JS
+
+```
+ @track items = [
+    { id: 1, name: 'Item 1' },
+    { id: 2, name: 'Item 2' },
+    { id: 3, name: 'Item 3' },
+  ];
+
+  connectedCallback() {
+    // Using forEach loop to iterate through the array
+    this.items.forEach((item) => {
+      console.log(item.name);
+    });
+  }
+```
+
+# while Loop:
+```
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
+
+```
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+```
+
+
