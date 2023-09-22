@@ -58,6 +58,12 @@ function exampleScope() {
 
 ## Difference between == and ===
 <img width="826" alt="Screenshot 2023-09-22 122357" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components/assets/119065314/9466fe00-743b-408e-8220-0013b3080e90">
+```
+var x =5;
+var y ="5";
+x == y; // true
+x === y; // false 
+```
 
 <br/>
 <br/>
