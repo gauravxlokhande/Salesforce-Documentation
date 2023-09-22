@@ -69,6 +69,81 @@ x === y; // false
 <br/>
 <br/>
 
+
+## String In js
+```
+const originalString = "   Hello, World!   ";
+
+// String Length
+console.log("Length:", originalString.length);
+
+// Accessing Characters
+console.log("First Character:", originalString[0]);
+console.log("Fifth Character:", originalString[5]);
+
+// Substring
+console.log("Substring:", originalString.substring(3, 8));
+
+// Searching and Replacing
+console.log("Index of 'World':", originalString.indexOf("World"));
+console.log("Replace 'Hello' with 'Hi':", originalString.replace("Hello", "Hi"));
+
+// Converting Case
+console.log("Uppercase:", originalString.toUpperCase());
+console.log("Lowercase:", originalString.toLowerCase());
+
+// Trimming Whitespace
+console.log("Trimmed:", originalString.trim());
+
+// Splitting into an Array
+const fruits = "apple,banana,cherry";
+const fruitArray = fruits.split(",");
+console.log("Fruit Array:", fruitArray);
+```
+
+```
+const originalString = "Hello, World!";
+
+// Extract characters from index 7 to the end
+const slice1 = originalString.slice(7);
+console.log(slice1); // Outputs: "World!"
+
+// Extract characters from index 0 to 5 (not including index 5)
+const slice2 = originalString.slice(0, 5);
+console.log(slice2); // Outputs: "Hello"
+
+// Extract the last 5 characters of the string
+const slice3 = originalString.slice(-5);
+console.log(slice3); // Outputs: "World!"
+```
+```
+const originalString = "Hello, World! Hello, Universe!";
+const replacedString = originalString.replace("Hello", "Hi");
+console.log(replacedString); // Outputs: "Hi, World! Hello, Universe!"
+
+// Using regular expression to replace all occurrences of "Hello"
+const replacedAllString = originalString.replace(/Hello/g, "Hi");
+console.log(replacedAllString); // Outputs: "Hi, World! Hi, Universe!"
+
+// Using a function to replace matched substrings
+const numbers = "1 2 3 4 5";
+const squared = numbers.replace(/\d+/g, function(match) {
+  return Math.pow(Number(match), 2);
+});
+console.log(squared); // Outputs: "1 4 9 16 25"
+```
+
+```
+const str = "Hello";
+const paddedStr = str.padEnd(10, "*");
+console.log(paddedStr); // Outputs: "Hello*****"
+
+const str = "42";
+const paddedStr = str.padStart(5, "0");
+console.log(paddedStr); // Outputs: "00042"
+```
+
+
 ## JavaScript Map 
 <b>A JavaScript Map is a built-in data structure for storing key-value pairs, allowing various key types and preserving insertion order. A JavaScript Set is a built-in data structure for storing unique values.<b/>
 
