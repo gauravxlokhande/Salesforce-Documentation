@@ -212,3 +212,40 @@ console.log(iterator.next().value); // Outputs: "banana"
 console.log(iterator.next().value); // Outputs: "cherry"
 console.log(iterator.next().value); // Outputs: undefined
 ```
+
+# .filter()
+```
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter((num) => num % 2 === 0);
+// evenNumbers will contain [2, 4]
+```
+
+# .find()
+```
+const numbers = [1, 2, 3, 4, 5];
+const firstEven = numbers.find((num) => num % 2 === 0);
+// firstEven will be 2
+```
+
+# .reduce()
+```
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+// sum will be 15
+```
+
+# .reduceRight()
+```
+const numbers = [1, 2, 3, 4, 5];
+const reversed = numbers.reduceRight((accumulator, current) => {
+  accumulator.push(current);
+  return accumulator;
+}, []);
+// reversed will be [5, 4, 3, 2, 1]
+```
+
+# .sort()
+```
+const fruits = ["apple", "banana", "cherry"];
+fruits.sort(); // Sorts alphabetically: ["apple", "banana", "cherry"]
+```
