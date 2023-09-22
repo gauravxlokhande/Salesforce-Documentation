@@ -1,5 +1,6 @@
 <div align="center"> <h1>LWC-JS-Cheatsheet</h1></div>
 
+
 ## JavaScript Variables
 
 In JavaScript, variables are used to store and manage data. Variables are like containers that hold values, and you can give them names so you can reference and manipulate those values later in your code. 
