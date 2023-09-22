@@ -44,7 +44,7 @@ function exampleScope() {
 <br/>
 <br/>
 
-
+## JavaScript Map 
 <b>A JavaScript Map is a built-in data structure for storing key-value pairs, allowing various key types and preserving insertion order. A JavaScript Set is a built-in data structure for storing unique values.<b/>
 
 ```
@@ -137,6 +137,7 @@ export default class MyLWCComponent extends LightningElement {
 <br/>
 <br/>
 
+## JavaScript Set 
 <b>JavaScript Sets can help to store and manage unique values efficiently. Sets ensure that each value is unique within the collection.<b/>
 
 ```
