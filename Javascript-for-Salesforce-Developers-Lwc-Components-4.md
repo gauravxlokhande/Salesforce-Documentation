@@ -118,4 +118,21 @@ const multiply = (a, b) => {
 };
 console.log(multiply(4, 6)); // Output: 24
 ```
+## Arrow function in object
+
+```
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  fullName: () => {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  sayHello: () => {
+    console.log(`Hello, ${this.fullName()}!`);
+  }
+};
+
+console.log(person.fullName()); // Output: undefined undefined
+person.sayHello(); // Output: Hello, undefined undefined!
+```
 
