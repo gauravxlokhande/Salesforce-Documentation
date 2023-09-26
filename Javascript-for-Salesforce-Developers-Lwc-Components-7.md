@@ -55,7 +55,7 @@ fetchUserData();
 ```
 
 
-# Promices In JS:
+## Promices In JS:
 
 In Salesforce Lightning Web Components (LWC), you can use Promises to handle asynchronous operations such as making server requests or interacting with external services. Here's a real-time example of using Promises in an LWC to make an asynchronous HTTP GET request to an external API and display the fetched data.
 
@@ -127,4 +127,162 @@ async function fetchAndHandleData() {
 
 // Call the async function to initiate the process
 fetchAndHandleData();
+```
+
+## Events in JS:
+
+Standard Events:
+
+Standard events are events that are predefined in LWC and can be used for common interactions. For example:
+
+click: Triggered when an element is clicked.
+change: Triggered when the value of an input element changes.
+input: Triggered when the user interacts with an input element.
+submit: Triggered when a form is submitted.
+You can use standard events directly in your component's HTML template by specifying event attributes like onclick, onchange, etc.
+
+
+<br/>
+
+Event Types:
+
+JavaScript supports various types of events, including but not limited to:
+
+Mouse Events: click, mousedown, mouseup, mousemove, mouseover, mouseout, etc.
+Keyboard Events: keydown, keyup, keypress
+Form Events: submit, input, change, focus, blur
+Document Events: load, unload, DOMContentLoaded, resize
+Custom Events: You can create custom events using the CustomEvent constructor.
+
+
+```
+<button onclick={handleButtonClick}>Click Me</button>
+
+// Access the data in the event handler
+handleButtonClick(event) {
+    const eventData = event.detail.data;
+    // Use eventData as needed
+```
+
+```
+import { LightningElement } from 'lwc';
+
+export default class ParentComponent extends LightningElement {
+    handleCustomEvent(event) {
+        // Handle the custom event from the child component
+        const message = event.detail.message;
+        console.log('Custom Event Received: ', message);
+    }
+}
+```
+
+```
+import { LightningElement } from 'lwc';
+
+export default class MyComponent extends LightningElement {
+    connectedCallback() {
+        // This code is executed when the component is inserted into the DOM
+        console.log('Component inserted into the DOM');
+    }
+
+    disconnectedCallback() {
+        // This code is executed when the component is removed from the DOM
+        console.log('Component removed from the DOM');
+    }
+}
+```
+
+## Event Handler:
+
+1.  Adding an Event Listener for a Button Click
+```
+<template>
+    <button id="myButton">Click Me</button>
+</template>
+```
+```
+import { LightningElement } from 'lwc';
+
+export default class MyComponent extends LightningElement {
+    connectedCallback() {
+        // Get a reference to the button element
+        const button = this.template.querySelector('#myButton');
+        
+        // Add a click event handler
+        button.addEventListener('click', this.handleButtonClick.bind(this));
+    }
+
+    handleButtonClick() {
+        // Handle the button click event here
+        console.log('Button clicked');
+    }
+}
+```
+
+
+ 2. Adding an Event Listener for a Custom Event
+```
+<template>
+    <c-child-component></c-child-component>
+</template>
+```
+```
+import { LightningElement } from 'lwc';
+
+export default class ParentComponent extends LightningElement {
+    connectedCallback() {
+        // Add an event listener for the custom event
+        this.template.querySelector('c-child-component')
+            .addEventListener('customclick', this.handleCustomEvent.bind(this));
+    }
+
+    handleCustomEvent(event) {
+        // Handle the custom event from the child component
+        const message = event.detail.message;
+        console.log('Custom Event Received: ', message);
+    }
+}
+```
+
+
+## Custom Events In JS:
+
+Child Component (childComponent.html)
+```
+<template>
+    <lightning-button label="Send Custom Event" onclick={handleButtonClick}></lightning-button>
+</template>
+```
+Child Component JavaScript (childComponent.js)
+```
+import { LightningElement } from 'lwc';
+
+export default class ChildComponent extends LightningElement {
+    handleButtonClick() {
+        const event = new CustomEvent('customclick', {
+            detail: { message: 'Hello from Child Component' }
+        });
+        this.dispatchEvent(event);
+    }
+}
+```
+
+Parent Component (parentComponent.html)
+```
+<template>
+    <c-child-component oncustomclick={handleCustomEvent}></c-child-component>
+    <p>{messageFromChild}</p>
+</template>
+```
+
+```
+import { LightningElement, track } from 'lwc';
+
+export default class ParentComponent extends LightningElement {
+    @track messageFromChild = '';
+
+    handleCustomEvent(event) {
+        this.messageFromChild = event.detail.message;
+    }
+}
 ```
