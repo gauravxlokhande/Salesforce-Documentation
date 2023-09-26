@@ -10,6 +10,7 @@ function greet(name) {
 
 greet("John"); // Outputs: "Hello, John!"
 ```
+
 ## Function Return Values:
 ```
 function add(a, b) {
