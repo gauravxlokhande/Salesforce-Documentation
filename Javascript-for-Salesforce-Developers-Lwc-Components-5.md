@@ -2,6 +2,9 @@
 
 # Console Methods in JS:
 
+## JavaScript provides a set of built-in methods that you can use to interact with the console in your web browser's developer tools or in server-side JavaScript environments. These methods are useful for debugging, logging, and providing feedback during development.
+
+
 1. console.log(): Prints a message or an object to the console. This is one of the most commonly used console methods for debugging.
 
 ```
@@ -64,3 +67,58 @@ console.timeEnd("Timer");
 ```
 console.clear();
 ```
+
+
+
+# setTimeout and setInterval functions:
+
+## In JavaScript, setTimeout and setInterval are two functions that allow you to execute code at a specified delay or at regular intervals. These functions are commonly used for tasks like animations, periodic updates, and asynchronous operations. 
+
+1. setTimeout:
+```
+setTimeout(function() {
+  console.log("This will be executed after 2000 milliseconds (2 seconds).");
+}, 2000);
+```
+
+```
+setTimeout(() => {
+  console.log("This will be executed after 1000 milliseconds (1 second).");
+}, 1000);
+```
+
+
+2. setInterval:
+
+```
+let counter = 0;
+
+const intervalId = setInterval(function() {
+  console.log(`Interval ${counter}`);
+  counter++;
+
+  if (counter === 5) {
+    clearInterval(intervalId); // Stop the interval after 5 iterations
+  }
+}, 1000);
+```
+
+```
+const timeoutId = setTimeout(function() {
+  console.log("This will not be executed.");
+}, 2000);
+
+clearTimeout(timeoutId); // Cancels the timeout
+```
+
+
+```
+const intervalId = setInterval(function() {
+  console.log("This will not continue indefinitely.");
+}, 1000);
+
+// After some condition is met, stop the interval
+clearInterval(intervalId);
+```
+
+
