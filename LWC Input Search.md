@@ -47,4 +47,4 @@ public with sharing class searchonaccountname {
 
 # Output:
 
-<img width="939" alt="Screenshot 2023-09-21 163621" src="https://github.com/gaurravlokhande/LWC-JS-Cheetsheet/assets/119065314/17d33314-1d88-455a-9300-4814b310eff9">
+<img width="939" alt="Screenshot 2023-09-21 163621" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1/assets/119065314/17d33314-1d88-455a-9300-4814b310eff9">
