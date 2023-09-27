@@ -1,3 +1,7 @@
+
+<img width="398" alt="Screenshot 2023-09-27 174024" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/0ba6c84d-7551-44af-888e-5b06ea788be3">
+
+
 ## Create a Child Component:
 
 First, create a child component that will emit a custom event. For example, let's create a simple child component named childComponent.
