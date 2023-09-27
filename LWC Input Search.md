@@ -47,4 +47,5 @@ public with sharing class searchonaccountname {
 
 # Output:
 
-![image](https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/31039f3c-096d-4b77-9543-04316fa94ea5)
+
+<img width="939" alt="Screenshot 2023-09-21 163621" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/ff9f7c8d-7ba9-4dab-8938-4008c9e80c5d">
