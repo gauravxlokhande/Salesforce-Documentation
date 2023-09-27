@@ -1,6 +1,6 @@
 <div align="center"> <h1>LWC-JS-Cheatsheet</h1></div>
 
-#  A callback is a function that is passed as an argument to another function and is executed when that function completes its task. Callbacks allow you to manage the flow of code in scenarios where certain operations may take time to complete, such as reading a file, making an HTTP request, or handling user interactions.
+## A callback is a function that is passed as an argument to another function and is executed when that function completes its task. Callbacks allow you to manage the flow of code in scenarios where certain operations may take time to complete, such as reading a file, making an HTTP request, or handling user interactions.
 
 
 ## example of how callbacks work:
