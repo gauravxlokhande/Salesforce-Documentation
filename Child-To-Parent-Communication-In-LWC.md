@@ -47,3 +47,34 @@ export default class ParentComponent extends LightningElement {
     }
 }
 ```
+
+
+## querySelector in an LWC:
+
+```
+<!-- querySelectorExample.html -->
+<template>
+    <div>
+        <p class="message">Hello, World!</p>
+        <button onclick={changeText}>Change Text</button>
+    </div>
+</template>
+```
+
+```
+// querySelectorExample.js
+import { LightningElement } from 'lwc';
+
+export default class QuerySelectorExample extends LightningElement {
+    changeText() {
+        // Use querySelector to select the <p> element with the class "message"
+        const paragraph = this.template.querySelector('.message');
+
+        // Check if the element is found
+        if (paragraph) {
+            // Change the text content of the selected element
+            paragraph.textContent = 'Text Changed!';
+        }
+    }
+}
+```
