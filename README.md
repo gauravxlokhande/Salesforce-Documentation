@@ -82,3 +82,44 @@ export default class AccountList extends LightningElement {
 
 ```
 
+## on buttonclick get data
+
+```
+<template>
+    <div>
+        <lightning-button label="Fetch Data" onclick={handleClick}></lightning-button>
+        <ul>
+            <template for:each={data} for:item="item">
+                <li key={item.Id}>{item.Name}</li>
+            </template>
+        </ul>
+    </div>
+</template>
+```
+
+
+```
+import { LightningElement } from 'lwc';
+import getApexData from '@salesforce/apex/getaccountdatataa.getlistofacc';
+
+export default class Testttttttttt extends LightningElement {
+    data = [];
+
+    gauravg() {
+        getApexData()
+            .then(result => {
+                // Handle the successful response
+                this.data = result;
+            })
+            .catch(error => {
+                // Handle any errors that occur
+                console.error('Error fetching data: ', error);
+            });
+    }
+
+    handleClick() {
+        this.gauravg(); // Call the Apex method when a button is clicked
+    }
+}
+```
+
