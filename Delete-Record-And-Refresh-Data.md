@@ -26,7 +26,7 @@ JS:
 import { LightningElement, wire, track } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getContacts from '@salesforce/apex/ContactController.getContacts';
-import deleteContact from '@salesforce/apex/ContactController.deleteContact';
+import { deleteRecord } from 'lightning/uiRecordApi';
 
 export default class ContactList extends LightningElement {
     // Declare a property to hold the wired data
@@ -40,7 +40,7 @@ export default class ContactList extends LightningElement {
     // Function to delete a contact and then refresh the wired data
     async handleDeleteContact(event) {
         const contactId = event.currentTarget.dataset.contactId;
-        await deleteContact({ contactId: contactId });
+        await deleteRecord({ this.contactId });
 
         // Refresh the wired data to reflect the deletion
         return refreshApex(this.wiredData);
