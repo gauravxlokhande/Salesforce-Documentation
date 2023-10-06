@@ -1,3 +1,31 @@
+## used in a Project
+
+```
+    // navigatin to go to contact record
+    
+      gotorecordpage(event) {
+         const recordId = event.currentTarget.dataset.id;
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                actionName: 'view',
+                recordId: recordId,
+                objectApiName: 'Contact' 
+            }
+        });
+    }
+
+````
+
+
+
+
+
+
+
+
+
+
 HTML:
 
 ```
