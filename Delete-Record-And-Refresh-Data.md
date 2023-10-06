@@ -69,5 +69,35 @@ refreshData() {
 }
 }
 ```
+## used in a project
 
+```
+async onDeleteContact(event) {
+    const contactId = event.currentTarget.dataset.id;
+
+    await deleteRecord(contactId)
+        .then((result) => {
+            this.dispatchEvent(new ShowToastEvent({
+                title: "Contact Deleted Successfully",
+                variant: "success"
+            }));
+             this.refreshdata();
+        })
+        .catch((error) => {
+            this.dispatchEvent(new ShowToastEvent({
+                title: "Error While Deleting Contact",
+                variant: "error"
+            }));
+        });
+}
+
+
+    refreshdata() {
+    return refreshApex(this.StoreContacts);
+}
+
+````
+   
+       
+    
 
