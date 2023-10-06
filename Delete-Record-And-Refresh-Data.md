@@ -48,4 +48,26 @@ export default class ContactList extends LightningElement {
 }
 ````
 
+JS:
+```
+
+// Automatically refresh data when the component is initialized
+connectedCallback() {
+    this.refreshData();
+
+
+@track wiredData;
+
+@wire(getContacts)
+wiredContacts(result) {
+    this.wiredData = result;
+}
+
+// Function to refresh the wired data
+refreshData() {
+    return refreshApex(this.wiredData);
+}
+}
+```
+
 
