@@ -110,6 +110,37 @@ div class="container">
 ```
 
 
+## Shortcut of filter 
+
+```
+@track selectedFilter = null;
+
+    handleCheckboxChange(event) 
+    {
+        const filterValues = {
+            'Partner Referral': 'Partner Referral',
+            'Web': 'Web',
+            'Phone Inquiry': 'Phone Inquiry'
+        };
+
+        const label = event.target.label;
+        this.selectedFilter = filterValues[label];
+    }
+
+onClickFilterButton() {
+    this.showFilter = false;
+    this.suspactPage = true;
+
+    if (this.selectedFilter) {
+        this[this.selectedFilter + 'CheckBox'] = false;
+        this.searchKey = this.selectedFilter;
+        this.searchLeads();
+        this.searchKey = null;
+        this.selectedFilter = null;
+    }
+}
+```
+
 
 
 
