@@ -53,6 +53,80 @@ export default class ParentComponent extends LightningElement {
 ```
 
 
+# Parent to child:
+
+SCENARIO: i want to sent the id that i getting from the record edit form field and i wnat to send it to event page for gave to the method so that it can return me the perticular records that i want.
+
+
+Societymodalscreen.js
+
+```
+ @track modalscreenforevents = true;
+
+    @api eventid;
+    onclickofsave() {
+        let inputField = this.template.querySelector('[data-id="society"]');
+        this.eventid = inputField.value;    
+
+        this.dispatchEvent(new CustomEvent('passid', { detail: this.eventid }));
+         this.modalscreenforevents = false;   
+     
+
+    }
+```
+
+Societymodalscreen.html
+
+```
+
+                    <lightning-record-edit-form density="compact" object-api-name="Event__c">
+
+                        <lightning-input-field field-name="Society__c" data-id="society" variant="standard">
+                        </lightning-input-field>
+
+                        <div class="savebtn">
+                            <lightning-button variant="brand" type="submit" label="Save" onclick={onclickofsave}
+                                class="slds-var-p-around_medium">
+                            </lightning-button>
+                        </div>
+
+
+                    </lightning-record-edit-form>
+```
+
+```
+ <template if:true={eventspage}>
+        <c-events-page>
+            StoreEventID={eventid}
+        </c-events-page>
+    </template>
+```
+
+eventpage.html
+
+```
+<template if:true={modalscreen}>
+        <c-select-society-name-modal-screen onpassid={handlePassId}></c-select-society-name-modal-screen>
+    </template>
+```
+
+
+eventpage.js
+
+```
+ eventid;
+
+    handlePassId(event) {
+        this.eventid = event.detail;
+        this.Searchandshowevents();
+        this.modalscreen = false;
+    }
+
+    Searchandshowevents() {
+        GetEventsData({ eventid: this.eventid })
+```
+
+
 ## querySelector in an LWC:
 
 ```
