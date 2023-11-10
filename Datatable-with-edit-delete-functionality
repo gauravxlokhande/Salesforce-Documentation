@@ -1,0 +1,79 @@
+# Lightning Datatable
+
+
+```
+<template>
+    <div class="container">
+        <!-- datatableWithButtons.html -->
+
+        <lightning-card title="Contact List with Buttons">
+            <lightning-datatable key-field="Id" data={contacts} columns={columns} onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </lightning-card>
+    </div>
+</template>
+```
+
+```
+import { LightningElement, track, wire } from 'lwc';
+import UserAccountRelatedContacts from '@salesforce/apex/SocietyManagementSystem.UserAccountRelatedContacts';
+import { NavigationMixin } from 'lightning/navigation';
+
+
+
+const actions = [
+    { label: 'Edit', name: 'edit' },
+    { label: 'Delete', name: 'delete' },
+    { label: 'View', name: 'view' },
+];
+
+const columns = [
+    { label: 'First Name', fieldName: 'FirstName', type: 'text' },
+    { label: 'Last Name', fieldName: 'LastName', type: 'text' },
+    { label: 'Email', fieldName: 'Email', type: 'email' },
+    {
+        type: 'action',
+        typeAttributes: { rowActions: actions },
+    },
+];
+
+
+export default class ProfilePage extends NavigationMixin (LightningElement) {
+
+    @track contacts = [];
+    columns = columns;
+
+
+    @wire(UserAccountRelatedContacts)
+    wiredContacts(result){
+        this.wireResult = result;
+         if(result.data){
+            this.contacts = result.data;
+        }else if(result.error){
+            this.error = result.error;
+        }
+    }
+
+
+    handleRowAction(event) {
+        const action = event.detail.action.name;
+        const row = event.detail.row;
+
+        switch (action) {
+            case 'edit':
+                // Handle the edit action
+                break;
+            case 'delete':
+                // Handle the delete action
+                break;
+            case 'view':
+                // Handle the view action
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+
+```
