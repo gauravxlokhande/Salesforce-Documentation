@@ -115,3 +115,82 @@ export default class ButtonsInLWC extends NavigationMixin(LightningElement) {
 }  
 ```
 
+
+Show data in datatable
+
+```
+
+const columns = [
+    { label: 'Invoice No', fieldName: 'Name', initialWidth: 100 },
+    { label: 'Amount', fieldName: 'Amount__c', initialWidth: 100},
+    { label: 'Status', fieldName: 'Status__c' , initialWidth: 100},
+    { label: 'Account Name', fieldName: 'Accountname', initialWidth: 150 },
+    { label: 'Utility Provider Name', fieldName: 'UtilityProviderName', initialWidth: 150 },
+    { label: 'Created DateTime', fieldName: 'Created_Date__c', initialWidth: 200 },
+    { label: 'Due DateTime', fieldName: 'Due_Date__c' , initialWidth: 200},
+    {
+        type: "button", initialWidth: 160, typeAttributes: {
+            label: 'Mark As paid',
+            disabled: false,
+            value: 'view',
+            iconPosition: 'left',
+           // iconName:'utility:preview',
+            variant:'Brand'
+        }
+    }
+];
+
+
+
+export default class UtilityPage extends LightningElement {
+    columns = columns;
+    
+    connectedCallback() {
+        this.fetchUtilityBill();
+    }
+
+
+    @track Storebilldata = [];
+
+
+    
+  fetchUtilityBill() {
+    getutilitybill()
+        .then(result => {
+            // console.log(result);
+            
+            this.Storebilldata = result.map(item => ({
+                ...item,
+                Accountname: item.Flat__r.Name,
+                UtilityProviderName: item.Utility_Provider__r.Name,
+            }));
+
+        })
+        .catch(error => {
+            console.error("Error fetching utility bill:", error);
+        });
+}
+````
+
+
+```
+ showmaintenreqdata() {
+    returndatamaintreq()
+        .then((result) => {
+            // console.log(result)
+            this.Storemaintdata = result.map(item => ({
+          ...item,
+                    Assignedto: item.Assigned_to__r ? item.Assigned_to__r.Name : '',
+                    requestedby: item.Requested_By__r ? item.Requested_By__r.Name : '',
+                    societyname: item.Society__r ? item.Society__r.Name : '',
+                    flatname: item.Flat__r ? item.Flat__r.Name : ''
+            }));
+            console.log(this.Storemaintdata);
+    })
+    .catch((error) => {
+        alert(error.body.message);
+    });
+
+    }
+```
+
