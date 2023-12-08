@@ -1,0 +1,145 @@
+Custome Email Tamplet Triggers:
+
+1. for contact
+
+trigger SendEmail on Contact (before insert) {
+    
+    List<messaging.Email> EmailList = new List<messaging.Email>();
+
+    
+    for(Contact con: Trigger.new){
+        Messaging.SingleEmailMessage emailmsg = new Messaging.SingleEmailMessage();
+        String[] storeEmail = new String[]{con.Email};
+         emailmsg.setToAddresses(storeEmail);
+        
+        emailmsg.setSubject('Welcome  '+con.FirstName);
+        emailmsg.setSenderDisplayName('Gaurav Lokhande');
+        
+        string emailbody ='Hi  '+con.FirstName+',<br/><br/>'+
+           'Welcome your account is created sucessfully!<br/><br/>'+
+            'lets explore your account<br/> <br/>'+
+            'Thank You! <br/> <br/>';
+        emailmsg.setHtmlBody(emailbody);        
+        EmailList.add(emailmsg);    
+         
+    }
+    messaging.sendEmail(EmailList);
+
+}
+
+
+_____________________________________________________
+
+2. for account who having low balance lesss then 5000
+
+trigger SendEmailTOAccount on Account (before insert) {
+    
+ 
+    List<messaging.Email> emailList = new List<messaging.Email>();
+    
+    List<Account> accList = [SELECT Id, Name FROM Account WHERE Account_Balance__c < 5000];
+
+    
+    for(Account acc: Trigger.new){
+        Messaging.SingleEmailMessage emailobj = new messaging.SingleEmailMessage();
+        String[] fetchallaccountemail = new String[]{acc.Email__c};
+         emailobj.setToAddresses(fetchallaccountemail);
+         emailobj.setSubject('Welcome  '+acc.Name);
+        emailobj.setSenderDisplayName('Gaurav Lokhande');
+        
+        string emailbody ='Hi  '+acc.Name+',<br/><br/>'+
+           'Welcome your account is created sucessfully!<br/><br/>'+
+            'Your balance is low'+acc.Account_Balance__c+'<br/><br/>'+
+            'Thank You! <br/> <br/>';
+        emailobj.setHtmlBody(emailbody);
+        
+        emailList.add(emailobj);
+        
+     }
+     messaging.sendEmail(emailList);
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Standard Email Tamplet Triggers:
+
+to check the id of standardemail Tamplet:
+SELECT Id, DeveloperName FROM EmailTemplate WHERE DeveloperName = 'My_First_Email_Tamplet'
+
+----------------------------------------
+1. for contact:
+
+trigger SendEmailTOContact on Contact (after insert) {
+    List<messaging.SingleEmailMessage> listofEmails = new List<messaging.SingleEmailMessage>();
+
+    for (Contact con : Trigger.new) {
+        if(con.Email!=null){
+        messaging.SingleEmailMessage email = new messaging.SingleEmailMessage();
+        email.setTemplateId('00X5j000000hYGSEA2'); // Replace with the actual template ID
+        email.setTargetObjectId(con.Id);
+        email.setSaveAsActivity(false);
+        listofEmails.add(email);
+        }
+    }
+
+    Messaging.sendEmail(listofEmails);
+}
+
+
+
+
+
+
+Problem 2:
+-->When an opportunity line item create 
+
+an email should go to Opportunity Account Client Contact -- Client Contact would be a fields on Account lookup to contact.
+
+Email Template:
+Hi, Conact Name
+Your Order has been proceed.
+Order detail is below.
+Product Name
+Product Code
+Unit Price
+List Price
+Discount
+Thanks
+User First Name User Last Name
+
+---->>>
+
+
+trigger OppLineItemEmail on OpportunityLineItem (after insert) {
+    List<Messaging.Email> emailList = new List<Messaging.Email>();
+
+    for (OpportunityLineItem oli : Trigger.new) {
+        Opportunity opp = [SELECT Id, AccountId FROM Opportunity WHERE Id = :oli.OpportunityId];
+        
+        if (opp.AccountId != null) {
+            Account accountWithContact = [SELECT Id, Client_Contact__c FROM Account WHERE Id = :opp.AccountId];
+            
+            if (accountWithContact.Client_Contact__c != null) {
+                Contact clientContact = [SELECT Id, Email FROM Contact WHERE Id = :accountWithContact.Client_Contact__c];
+                
+                Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
+                email.setTemplateId('00X5j000000hYOhEAM');
+                email.setTargetObjectId(clientContact.Id);
+                email.setSaveAsActivity(false);
+                
+                // Set merge fields for the email template
+                email.setWhatId(oli.Id); // Set to Opportunity Line Item Id for merge fields
+                
+                emailList.add(email);
+            }
+        }
+    }
+    
+    if (!emailList.isEmpty()) {
+        Messaging.sendEmail(emailList);
+    }
+
+    
+    
+}
+
