@@ -8,3 +8,18 @@
     }
 ```
 
+```
+<lightning-input 
+    id='firstName'
+    data-key="firstName"
+    type="text" 
+    autocomplete="off"
+    max-length ="15"
+    label="First name"
+    value={firstName}
+    onchange={handleInput}
+    class="firstNameCls"
+    message-when-value-missing="Required input"
+    required></lightning-input>
+```
+
