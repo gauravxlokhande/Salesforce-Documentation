@@ -24,6 +24,23 @@
 ```
 
 ```
+    <lightning-layout>
+        <lightning-layout-item padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">1</div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">2</div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">3</div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">4</div>
+        </lightning-layout-item>
+    </lightning-layout>
+```
+
+```
  <div class="slds-nav-vertical__section">
         <ul>
             <li class="slds-nav-vertical__item"><a class="slds-nav-vertical__action" href="https://www.w3web.net/"
