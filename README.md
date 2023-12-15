@@ -144,3 +144,35 @@
     </div>
 
 ```
+
+## Lwc Carosal for scrolling Image
+
+<img width="382" alt="Screenshot 2023-12-15 103600" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/76bb5354-27ee-4d81-977e-c990b03ac68c">
+
+
+```
+   <lightning-carousel disable-auto-scroll>
+            <lightning-carousel-image
+                src={companyLogoUrl}
+                header="Company logo"
+                description="Company logo uploaded to a static resource"
+                alternative-text="Company logo"
+            >
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src={product1Url}
+                header="Fantastic product 1"
+                description="Fantastic product image in a zip file"
+                alternative-text="Fantastic product 1"
+            >
+            </lightning-carousel-image>
+            <lightning-carousel-image
+                src={product2Url}
+                header="Fantastic product 2"
+                description="Fantastic product image in a zip file"
+                alternative-text="Fantastic product 2"
+            >
+            </lightning-carousel-image>
+        </lightning-carousel>
+```
+
