@@ -6,6 +6,19 @@
         this.disableBtn = !this.field1; // I will Disable the button if field1 is falsy (empty or null)
 
     }
+
+
+.custom-box{
+    background-color: black;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+
+}
+.custom-box:hover{
+    background-color: #ddd;
+         transform: scale(1.2);
+}
 ```
 
 ```
