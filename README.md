@@ -9,18 +9,26 @@
 ```
 
 ```
-<lightning-input 
-    id='firstName'
-    data-key="firstName"
-    type="text" 
-    autocomplete="off"
-    max-length ="15"
-    label="First name"
-    value={firstName}
-    onchange={handleInput}
-    class="firstNameCls"
-    message-when-value-missing="Required input"
-    required></lightning-input>
+<lightning-input
+  label="Input Label"            <!-- The label for the input field -->
+  name="inputField"              <!-- The name attribute for the input field -->
+  type="text"                    <!-- The type of input (text, password, etc.) -->
+  value="Default Value"           <!-- The default value for the input field -->
+  placeholder="Enter value"      <!-- The placeholder text for the input field -->
+  required                       <!-- Indicates that the input field is required -->
+  disabled                       <!-- Disables the input field -->
+  readonly                       <!-- Makes the input field read-only -->
+  maxlength="50"                 <!-- Maximum number of characters allowed -->
+  minlength="5"                  <!-- Minimum number of characters required -->
+  pattern="[A-Za-z0-9]*"         <!-- Regular expression pattern for validation -->
+  message-when-bad-input="Invalid input format" <!-- Error message for bad input -->
+  message-when-too-long="Input is too long"     <!-- Error message for input that is too long -->
+  message-when-too-short="Input is too short"   <!-- Error message for input that is too short -->
+  message-when-pattern-mismatch="Invalid input pattern" <!-- Error message for pattern mismatch -->
+  message-when-value-missing="Input is required" <!-- Error message for missing required input -->
+  onchange={handleInputChange}   <!-- Event handler for input changes -->
+></lightning-input>
+
 ```
 
 ```
