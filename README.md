@@ -9,14 +9,9 @@
 
 
 .custom-box{
-    background-color: black;
-    color: white;
     transition: transform 0.3s ease-in-out;
-    border-radius: 10px;
-
 }
-.custom-box:hover{
-    background-color: #ddd;
+.custom-box:hover{ 
          transform: scale(1.2);
 }
 ```
