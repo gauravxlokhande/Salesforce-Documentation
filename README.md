@@ -46,6 +46,10 @@
 
 ```
 
+## Lightning Layout with layout item
+
+<img width="464" alt="Screenshot 2023-12-15 104233" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/217f8b4d-ef48-4158-b1a8-6a2b77c69761">
+
 ```
  <template>
   <lightning-layout multiple-rows> <!-- Use the lightning-layout for the main layout -->
@@ -78,6 +82,9 @@
 </template>
 
 ```
+
+## Iframe for show youtube video
+<img width="309" alt="Screenshot 2023-12-15 104059" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/cf6150db-663f-4300-a3ea-1a8ccc9eb087">
 
 
 ```
