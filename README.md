@@ -189,3 +189,27 @@
 ```
 https://youtu.be/HXJXUFeWmMg?si=VoESxMud-rkOAq-M
 ```
+
+## lwc menu
+<img width="938" alt="Screenshot 2023-12-15 154543" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/d619d08b-8153-4b81-9d75-187e4c88db11">
+
+<img width="99" alt="Screenshot 2023-12-15 154553" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/218586ca-1373-47ed-9ff5-5561a4c03fbe">
+
+
+```
+ <lightning-menu-item 
+        value={menuItemValue} 
+        label={menuItemLabel}
+        onmouseover={handleMouseOver}
+        onmouseleave={handleMouseLeave}
+        onclick={handleClick}>
+    </lightning-menu-item>
+```
+```
+    <lightning-button-menu alternative-text="Show menu" icon-name="utility:down" icon-size="xx-small" label=""
+        onclick={clickHandler} variant="bare">
+        <lightning-menu-item value="menuItemOne" label="Menu Item One"></lightning-menu-item>
+        <lightning-menu-item value="menuItemTwo" label="Menu Item Two"></lightning-menu-item>
+        <lightning-menu-item value="menuItemThree" label="Menu Item Three"></lightning-menu-item>
+    </lightning-button-menu>
+```
