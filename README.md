@@ -209,6 +209,7 @@ https://youtu.be/HXJXUFeWmMg?si=VoESxMud-rkOAq-M
     <lightning-button-menu alternative-text="Show menu" icon-name="utility:down" icon-size="xx-small" label=""
         onclick={clickHandler} variant="bare">
         <lightning-menu-item value="menuItemOne" label="Menu Item One"></lightning-menu-item>
+             <lightning-menu-divider></lightning-menu-divider> // it forms a line to divide above menue from below
         <lightning-menu-item value="menuItemTwo" label="Menu Item Two"></lightning-menu-item>
         <lightning-menu-item value="menuItemThree" label="Menu Item Three"></lightning-menu-item>
     </lightning-button-menu>
