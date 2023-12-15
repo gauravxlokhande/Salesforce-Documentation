@@ -9,6 +9,21 @@
 ```
 
 ```
+ <lightning-button
+    label="Click Me"          <!-- The text displayed on the button -->
+    title="Hover over me"     <!-- The tooltip text when hovering over the button -->
+    icon-name="utility:heart" <!-- The Lightning Design System (SLDS) icon to display next to the label -->
+    icon-position="left"      <!-- The position of the icon relative to the label (left or right) -->
+    variant="brand"           <!-- The style or variant of the button (brand, destructive, etc.) -->
+    type="button"             <!-- The type of the button (button, reset, or submit) -->
+    disabled                 <!-- Disables the button -->
+    onclick={handleClick}     <!-- Event handler for button click -->
+  ></lightning-button>
+```
+
+
+
+```
 <lightning-input
   label="Input Label"            <!-- The label for the input field -->
   name="inputField"              <!-- The name attribute for the input field -->
@@ -32,20 +47,36 @@
 ```
 
 ```
-    <lightning-layout>
-        <lightning-layout-item padding="around-small">
-            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">1</div>
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small">
-            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">2</div>
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small">
-            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">3</div>
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small">
-            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">4</div>
-        </lightning-layout-item>
-    </lightning-layout>
+ <template>
+  <lightning-layout multiple-rows> <!-- Use the lightning-layout for the main layout -->
+    <!-- Row 1 -->
+    <lightning-layout-item size="12" padding="around-small">
+      <!-- Use lightning-layout-item for individual layout items -->
+      <p>Row 1, Full Width</p>
+    </lightning-layout-item>
+
+    <!-- Row 2 -->
+    <lightning-layout-item size="6" small-size="12" padding="around-small">
+      <!-- Use size and small-size to control column width at different screen sizes -->
+      <p>Row 2, Half Width on Large Screen, Full Width on Small Screen</p>
+    </lightning-layout-item>
+
+    <lightning-layout-item size="6" small-size="12" padding="around-small">
+      <p>Row 2, Half Width on Large Screen, Full Width on Small Screen</p>
+    </lightning-layout-item>
+
+    <!-- Row 3 -->
+    <lightning-layout-item size="4" small-size="6" padding="around-small">
+      <!-- Use padding to add space around the layout item -->
+      <p>Row 3, One-Third Width on Large Screen, Half Width on Small Screen</p>
+    </lightning-layout-item>
+
+    <lightning-layout-item size="8" small-size="6" padding="around-small">
+      <p>Row 3, Two-Thirds Width on Large Screen, Half Width on Small Screen</p>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>
+
 ```
 
 
