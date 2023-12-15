@@ -115,8 +115,10 @@
 ></iframe>
 
 ```
+## vertical scroll
 
-```
+```<img width="917" alt="Screenshot 2023-12-15 104431" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/cd2e5017-275a-4f86-af66-8849a273421f">
+
  <div class="slds-nav-vertical__section">
         <ul>
             <li class="slds-nav-vertical__item"><a class="slds-nav-vertical__action" href="https://www.w3web.net/"
