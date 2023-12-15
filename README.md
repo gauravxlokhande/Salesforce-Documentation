@@ -40,6 +40,36 @@
     </lightning-layout>
 ```
 
+
+```
+<iframe 
+  width="100%"                 <!-- Set the width of the iframe to 100% of its container -->
+  height="100%"                <!-- Set the height of the iframe to 100% of its container -->
+  src="https://www.youtube.com/embed/BmeFVjnALuQ?si=UhMj2RnZWobbsZAj"
+                                <!-- Specify the URL of the content to be embedded (a YouTube video in this case) -->
+  title="YouTube video player" <!-- Provide a title for the iframe, useful for accessibility -->
+  frameborder="0"               <!-- Set the frameborder to 0 to remove the iframe border -->
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                <!-- Allow specific permissions for the iframe content -->
+  allowfullscreen              <!-- Allow the iframe to be displayed in full-screen mode -->
+  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                                <!-- Enable additional restrictions for added security -->
+  loading="lazy"               <!-- Defer loading of the iframe until it's near the viewport -->
+  name="myFrame"               <!-- Assign a name to the iframe (used as a target for hyperlinks or forms) -->
+  referrerpolicy="no-referrer" <!-- Set the policy for handling the Referer header -->
+  longdesc="https://example.com/description.html"
+                                <!-- Provide a URL to a long description for accessibility -->
+  marginwidth="0"               <!-- Set the margin width of the iframe (deprecated) -->
+  marginheight="0"              <!-- Set the margin height of the iframe (deprecated) -->
+  scrolling="no"               <!-- Specify whether or not to display scrollbars in the iframe (deprecated) -->
+  seamless                     <!-- Suggest that the iframe should appear as part of the containing document -->
+  allowpaymentrequest          <!-- Allow the iframe to make use of the Payment Request API -->
+  loading="auto"               <!-- Use a more flexible loading strategy where the browser determines when to load -->
+  importance="high"            <!-- Hint to the browser about the importance of the iframe content -->
+></iframe>
+
+```
+
 ```
  <div class="slds-nav-vertical__section">
         <ul>
