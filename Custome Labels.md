@@ -9,6 +9,7 @@ System.debug(storecustomelabel);
 ```
 
 ```
-Step 1: storecustomelabel // open in org in quick find
+Step 1:custom labels // open in org in quick find
+Step 2: Language Setting // to add all languages in it
 Step 2: Translation Language Setting // to add the different languages in it
 ```
