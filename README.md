@@ -222,3 +222,7 @@ https://youtu.be/HXJXUFeWmMg?si=VoESxMud-rkOAq-M
         <lightning-menu-item value="menuItemThree" label="Menu Item Three"></lightning-menu-item>
     </lightning-button-menu>
 ```
+
+## Static Resource in vs code
+<img width="298" alt="Screenshot 2023-12-28 164845" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/641f498e-3554-44b8-ae7a-fa84d0f19f70">
+
