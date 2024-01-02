@@ -41,7 +41,8 @@ public class WrapperClass {
 
 # To gave data to another org/ we can acces in postman
 
-<img width="518" alt="Screenshot 2024-01-02 111219" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/41a8f01b-5347-46cb-9b30-8790942dc4f3">
+<img width="518" alt="Screenshot 2024-01-02 111219" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/f28565b5-5507-4a59-9ae2-5902a2c21f45">
+
 
 
 # Wrapper Class Selected Accounts multiple
