@@ -38,3 +38,8 @@ public class WrapperClass {
 }
 
 ```
+
+
+<img width="518" alt="Screenshot 2024-01-02 111219" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/41a8f01b-5347-46cb-9b30-8790942dc4f3">
+
+
