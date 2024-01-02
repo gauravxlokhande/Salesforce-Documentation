@@ -44,3 +44,10 @@ public class WrapperClass {
 <img width="518" alt="Screenshot 2024-01-02 111219" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/41a8f01b-5347-46cb-9b30-8790942dc4f3">
 
 
+# Wrapper Class Selected Accounts multiple
+```
+https://youtu.be/CWoAGoLjr7c?si=pQvNB5ZwemP7-JiW
+```
+<img width="510" alt="Screenshot 2024-01-02 125914" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/26cf1200-15e3-4f46-8c3d-5050ab4c4255">
+
+
