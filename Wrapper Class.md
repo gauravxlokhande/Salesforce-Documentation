@@ -39,6 +39,48 @@ public class WrapperClass {
 
 ```
 
+```
+public with sharing class AccountContactWrapper {
+    @AuraEnabled(cacheable=true)
+    public static List<WrapperClass> getWrapAccountList() {
+        return fetchAccountContactData();
+    }
+
+    private static List<WrapperClass> fetchAccountContactData() {
+        List<WrapperClass> wrapAccountList = new List<WrapperClass>();
+        for (Account acc : [SELECT Id, Name, (SELECT Id, Name, Email FROM Contacts) FROM Account LIMIT 100]) {
+            wrapAccountList.add(new WrapperClass(acc, acc.Contacts, acc.Contacts.size()));
+        }
+        System.debug(wrapAccountList);
+        return wrapAccountList;
+    }
+
+    // This wrapper class 
+    public class WrapperClass {
+        @AuraEnabled
+        public Account acc { get; set; }
+        @AuraEnabled
+        public List<Contact> conList { get; set; }
+        @AuraEnabled
+        public Integer contactSize { get; set; }
+        @AuraEnabled
+        public Boolean isCheck { get; set; }
+
+        public WrapperClass(Account a, List<Contact> cont, Integer countContact) {
+            this.acc = a;
+            this.conList = cont;
+            this.contactSize = countContact;
+            this.isCheck = false;
+        }
+    }
+}
+
+
+```
+
+
+
+
 # To gave data to another org/ we can acces in postman
 
 <img width="518" alt="Screenshot 2024-01-02 111219" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/f28565b5-5507-4a59-9ae2-5902a2c21f45">
