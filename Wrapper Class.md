@@ -1,6 +1,9 @@
 
 # Wrapper Class In Salesforce
 
+## overall i learn by exploring this wrappper class concept is the wrapper class is a class that have power to contain the different data types of data and resturn differnt data types of data by combining in a single object.
+
+Ex:  the best example of it is the one class that returning in result is:  | Account Name | Contact Name | Total no of related contact|
 
 ```
 public class WrapperClass {
