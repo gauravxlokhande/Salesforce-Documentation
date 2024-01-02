@@ -39,6 +39,7 @@ public class WrapperClass {
 
 ```
 
+## Example 1
 ```
 public with sharing class AccountContactWrapper {
     @AuraEnabled(cacheable=true)
@@ -78,6 +79,43 @@ public with sharing class AccountContactWrapper {
 
 ```
 
+## Example 2 
+ ## Solved by me
+```
+public without sharing class AccountContactWrapper {
+  
+    
+     Public  List<FetchAllData> fetchAccountContactData() {
+   List<FetchAllData> allDataList =new List<FetchAllData>();
+    
+    List<Account> acclist =[Select Id, Name,(Select Id,Name, Email From Contacts) From Account Limit 10];
+    
+    for(Account add: acclist){
+        allDataList.add(new FetchAllData(add, add.Contacts, add.Contacts.size()));
+    }
+         System.debug(allDataList);
+         return allDataList;
+     } 
+    
+    
+    public class FetchAllData{
+        
+        Public Account acc;
+        Public List<contact> con;
+        Public Integer ContactSize;
+        Public Boolean IsCheck;
+         
+        FetchAllData(Account A, List<Contact> conl , Integer ConSize){
+             this.acc =A;
+             this.con=conl;
+             this.ContactSize =ConSize;
+        }         
+    }
+    
+    
+}
+
+```
 
 
 
