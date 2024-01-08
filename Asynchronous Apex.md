@@ -76,3 +76,34 @@ global with sharing class ScheduledtestClass implements Schedulable {
 String CRON_EXP = '0 0 0 3 9 ? 2042';
 System.schedule('ScheduleClassNameStr - Monday 5AM', CRON_EXP, ScheduledtestClass());
 ```
+
+
+# Queueable Class
+<p> we can also do job chaining like we can call the class2 from class1.</p>
+
+## To Execute job
+```
+ system.enqueuejob( new SampleQueueable1());
+```
+Class 1:
+```
+global with sharing class SampleQueueable1 implements Queueable { 
+    global void execute(QueueableContext context) {
+        Account acc = new Account();
+         acc.Name='Gaurav';
+         Insert acc;
+    }
+ system.enqueuejob( new SampleQueueable2());
+}
+```
+
+Class 2:
+```
+global with sharing class SampleQueueable2 implements Queueable { 
+    global void execute(QueueableContext context) {
+        Contact con = new Contact();
+         con.Name='Gaurav';
+         Insert con;
+    }
+}
+```
