@@ -3,6 +3,8 @@
 
 <p>A maximum of 50 million records can be returned in the QueryLocator object. If more than 50 million records are returned, the batch job is immediately terminated and marked as Failed.</p>
 
+<p>We can also shedule batch class from itself by: Database.Batchable<sObject>,Schedule </p>
+
 
 ```
 global class TestBatchApex implements Database.Batchable<sObject>, Database.Stateful {
@@ -30,6 +32,13 @@ global class TestBatchApex implements Database.Batchable<sObject>, Database.Stat
     global void finish(Database.BatchableContext bc) {
         System.debug('Batch job id = ' + bc.getJobId());               // here we peformed the final action like : Send email, notification , or debug etc..
     }
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  global void execute(SchedulableContext ctx) {
+        Id Jobid =  Database.executeBatch(new TestBatchApex(), 200); // for sheduling batch class from itself
+        System.debug(Jobid);
+    }
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }
 
 ```
@@ -64,4 +73,6 @@ global with sharing class ScheduledtestClass implements Schedulable {
 ## Schedule class From Code By using CRON Expression.
 
 ```
+String CRON_EXP = '0 0 0 3 9 ? 2042';
+System.schedule('ScheduleClassNameStr - Monday 5AM', CRON_EXP, ScheduledtestClass());
 ```
