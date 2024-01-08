@@ -40,3 +40,28 @@ global class TestBatchApex implements Database.Batchable<sObject>, Database.Stat
 Id jobid = Database.executeBatch(new TestBatchApex(), 200);     // it is a reference of new TestBatchApex() and 200 is a size of batch that gonna bu execute at a time
 System.debug('jobid'+jobid);                                    // it returns a jobid ike 200record execute is a batch so it retun its id.
 ```
+
+
+# Scheduled Class
+<p> Sheduled class is used for scheduled the batchable classes on the perticular time or a perticular day</p>
+
+<p>there are the two ways of Sheduled a class: 1. From UI , 2. By using CRON Expression</p>
+
+## Sheduled Class From UI
+Apex Classes--> Scheduled Class--> Schedule
+
+```
+global with sharing class ScheduledtestClass implements Schedulable {
+    
+    global void execute(SchedulableContext ctx) {
+        Id Jobid =  Database.executeBatch(new TestBatchApex(), 200);
+        System.debug(Jobid);
+    }
+    
+}
+```
+
+## Schedule class From Code By using CRON Expression.
+
+```
+```
