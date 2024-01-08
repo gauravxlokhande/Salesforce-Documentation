@@ -70,7 +70,7 @@ global with sharing class ScheduledtestClass implements Schedulable {
 }
 ```
 
-## Schedule class From Code By using CRON Expression.
+## To execute this class
 
 ```
 String CRON_EXP = '0 0 0 3 9 ? 2042';
