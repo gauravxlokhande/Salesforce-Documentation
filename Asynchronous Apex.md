@@ -1,6 +1,9 @@
 # Batchable Apex
 <p> In Batch Apex we decide that we want to update records, delete records or insert records in bulck manner, Batch Apex jobs are limited to five tasks running simultaneously for fast result and executeBatch can have a maximum value of 2,000.  </p>
+
 <p>A maximum of 50 million records can be returned in the QueryLocator object. If more than 50 million records are returned, the batch job is immediately terminated and marked as Failed.</p>
+
+
 ```
 global class TestBatchApex implements Database.Batchable<sObject>, Database.Stateful {
     
