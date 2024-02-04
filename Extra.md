@@ -37,3 +37,8 @@ Parent To Child Query:
 List<Account> accList =[Select Id , Name,(Select LastName) from Account];
 
 ```
+
+
+## websites for work free
+https://lucide.dev/
+https://excalidraw.com/
