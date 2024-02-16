@@ -226,3 +226,21 @@ https://youtu.be/HXJXUFeWmMg?si=VoESxMud-rkOAq-M
 ## Static Resource in vs code
 <img width="298" alt="Screenshot 2023-12-28 164845" src="https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/641f498e-3554-44b8-ae7a-fa84d0f19f70">
 
+
+## Filter Functionality Using Filter Function
+
+```
+    fetchavailableroom() {
+        fetchAvaliableRooms()
+            .then((result) => {
+                this.AvailableRooms = result.filter(item => item.Room_Type__c === this.StoreRoomType);
+                if (this.AvailableRooms.length<=0) {
+                    this.AvailableRooms = result;
+                }
+            // console.log('length of available rooms', this.AvailableRooms.length);  
+               
+            }).catch((error) => {
+                alert(error.body.message)
+            });
+    }
+```
