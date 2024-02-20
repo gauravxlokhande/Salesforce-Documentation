@@ -15,4 +15,6 @@
   - and do setup for user level
 
 ## Step 3: Sharing Setting From User Profile
-  - go to "Einstine Activity Capture" --> Sharing Setting and do the setup
+  - go to "Einstine Activity Capture" --> Sharing Setting and connect with whatever u want to integrate.
+
+## thats it done.
