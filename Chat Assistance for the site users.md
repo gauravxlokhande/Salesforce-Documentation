@@ -12,3 +12,5 @@
 8. click on it and on it. mean make it active.
 9. done.
 10. now user can able to intract.
+
+Note: add the chat session tab in the application from app manager to interact with user.
