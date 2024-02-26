@@ -1,3 +1,11 @@
+## Create a movie search website uing lwc
+<p>refer To clear all the optimized concepts regarding lwc website.</p>
+
+```
+https://youtu.be/m0NxaFvuyZs?si=A013doGe11Axfei5
+```
+
+
 ## Disable any button if any input field is empty / u want a value from user forcefully
 
 ```
