@@ -38,21 +38,21 @@ export default class Aboutcheckinn extends LightningElement {
 ```
 // aboutcheckinn.js
 import { LightningElement, track } from 'lwc';
-import thirdpartycss from '@salesforce/resourceUrl/thirdpartycss';
-import thirdpartyjs from '@salesforce/resourceUrl/thirdpartyjs';
+import thirdpartycss from '@salesforce/resourceUrl/bootstrap';
+import bootstrapjs from '@salesforce/resourceUrl/bootstrapjs';
 import { loadStyle, loadScript } from 'lightning/platformResourceLoader';
 
 export default class Aboutcheckinn extends LightningElement {
+
     @track FirstLoad = true;
 
     renderedCallback() {
         if (this.FirstLoad) {
             Promise.all([
-                loadStyle(this, thirdpartycss + '/aboutcheckinn.css'),
-                loadScript(this, thirdpartyjs + '/aboutcheckinn.js')
+                loadStyle(this, thirdpartycss),
+                loadScript(this, bootstrapjs)
             ]).then(() => {
                 console.log('CSS and JS loaded successfully');
-                // Add any additional initialization or logic here
                 this.FirstLoad = false;
             }).catch(error => {
                 console.error('Error loading resources: ', error);
@@ -60,5 +60,6 @@ export default class Aboutcheckinn extends LightningElement {
         }
     }
 }
+
 
 ```
