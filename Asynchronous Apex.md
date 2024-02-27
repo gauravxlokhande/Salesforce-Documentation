@@ -74,7 +74,7 @@ global with sharing class ScheduledtestClass implements Schedulable {
 
 ```
 String CRON_EXP = '0 0 0 3 9 ? 2042';
-System.schedule('ScheduleClassNameStr - Monday 5AM', CRON_EXP, ScheduledtestClass());
+System.schedule('ScheduleClassNameStr - Monday 5AM', CRON_EXP, new ScheduledtestClass());
 ```
 
 
