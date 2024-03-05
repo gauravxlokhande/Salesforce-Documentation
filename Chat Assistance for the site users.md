@@ -14,3 +14,7 @@
 10. now user can able to intract.
 
 Note: add the chat session tab in the application from app manager to interact with user.
+
+```
+https://www.youtube.com/watch?v=t-dYsEbE51o&ab_channel=Salesforcein5minutes
+```
