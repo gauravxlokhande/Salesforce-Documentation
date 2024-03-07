@@ -38,3 +38,135 @@
         dateCmp.reportValidity();
     }
 ```
+
+
+
+
+component2.html
+
+```
+<template>
+  <lightning-input
+    label="Name"
+    value={name}
+    onchange={handleNameChange}
+    required
+  ></lightning-input>
+  <div class="error">{nameError}</div>
+
+  <lightning-input
+    label="Email"
+    value={email}
+    onchange={handleEmailChange}
+    pattern=".+@.+\..+"
+    required
+  ></lightning-input>
+  <div class="error">{emailError}</div>
+
+  <lightning-button label="Submit" onclick={handleSubmit} variant="brand"></lightning-button>
+</template>
+```
+component2.js
+```
+import { LightningElement, track } from 'lwc';
+
+export default class FormValidationExample extends LightningElement {
+  @track name = '';
+  @track email = '';
+  @track nameError = '';
+  @track emailError = '';
+
+  handleNameChange(event) {
+    this.name = event.target.value;
+  }
+
+  handleEmailChange(event) {
+    this.email = event.target.value;
+  }
+
+  handleSubmit() {
+    // Validate Name
+    if (!this.name) {
+      this.nameError = 'Name is required.';
+    } else {
+      this.nameError = '';
+    }
+
+    // Validate Email
+    if (!this.email) {
+      this.emailError = 'Email is required.';
+    } else if (!this.email.match('.+@.+\..+')) {
+      this.emailError = 'Please enter a valid email address.';
+    } else {
+      this.emailError = '';
+    }
+
+    // Submit form if there are no errors
+    if (!this.nameError && !this.emailError) {
+      // Perform form submission logic
+      // ...
+    }
+  }
+}
+```
+
+component3.html
+```
+<template>
+  <lightning-input
+    label="Password"
+    type="password"
+    value={password}
+    onchange={handlePasswordChange}
+    required
+  ></lightning-input>
+  <div class="error">{passwordError}</div>
+
+  <lightning-button
+    label="Submit"
+    onclick={handleSubmit}
+    variant="brand"
+  ></lightning-button>
+</template>
+```
+component3.js
+```
+import { LightningElement, track } from 'lwc';
+
+export default class PasswordValidationExample extends LightningElement {
+  @track password = '';
+  @track passwordError = '';
+
+  handlePasswordChange(event) {
+    this.password = event.target.value;
+    this.validatePassword();
+  }
+
+  validatePassword() {
+    if (!this.password) {
+      this.passwordError = 'Password is required.';
+    } else if (this.password.length < 8) {
+      this.passwordError = 'Password should be at least 8 characters long.';
+    } else if (!/[A-Z]/.test(this.password)) {
+      this.passwordError = 'Password should contain at least one uppercase letter.';
+    } else if (!/[0-9]/.test(this.password)) {
+      this.passwordError = 'Password should contain at least one numeric digit.';
+    } else {
+      this.passwordError = '';
+    }
+  }
+
+  handleSubmit() {
+    if (!this.passwordError) {
+      // Form is valid, perform submission logic
+      // ...
+    }
+  }
+}
+```
+
+# To refer validatios more advance refer:
+
+```
+https://sfdclesson.com/2023/07/05/enhancing-form-validation-in-lightning-web-components-lwc/
+```
