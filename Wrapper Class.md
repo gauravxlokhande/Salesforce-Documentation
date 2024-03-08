@@ -1,6 +1,35 @@
 
 # Wrapper Class In Salesforce
 
+## Basic Syntax of wrapper class.
+```
+public class AgricultureWrapper {
+    public static List<records> gavecududu(){
+        List<records> reclist = new List<records>();
+        records rec =new records();
+        rec.state='pune';
+        reclist.add(rec);
+        System.debug(reclist);
+        return reclist;
+    }
+    public class records {
+        public String state;    // Bihar
+        public String district;    // Rohtas
+        public String market;    // Sasaram
+        public String commodity;    // Onion
+        public String variety;    // Medium
+        public String grade;    // NA
+        public String arrival_date;    // 17/12/2023
+        public String min_price;    // 3500
+        public String max_price;    // 4500
+        public String modal_price;    // 4000
+    }
+}
+```
+
+
+
+
 ## overall i learn by exploring this wrappper class concept is the wrapper class is a class that have power to contain the different data types of data and resturn differnt data types of data by combining in a single object.
 
 Ex:  the best example of it is the one class that returning in result is:  | Account Name | Contact Name | Total no of related contact|
