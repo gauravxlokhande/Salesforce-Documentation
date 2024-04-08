@@ -1,3 +1,4 @@
+![image](https://github.com/gauravxlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/801139b6-e2be-4bf2-a465-f8ee324ae5dd)
 
 ![image](https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/c2a69a00-2701-4fc7-9d10-ca76eb09bbdc)
 
