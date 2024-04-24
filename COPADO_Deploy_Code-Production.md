@@ -1,6 +1,11 @@
 # Copado for Salesforce
 Copado is a leading Salesforce-native release management and Continuous Integration / Continuous Deployment (CI/CD) platform. It's designed to streamline the development, deployment, and release processes within Salesforce environments.
 
+
+![image](https://github.com/gauravxlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/878e2c46-e13d-47c0-8e2d-85cd3c81bbf9)
+
+
+
 # Key Features
 ## 1. Version Control
 Integrate with Git for efficient source code management.
