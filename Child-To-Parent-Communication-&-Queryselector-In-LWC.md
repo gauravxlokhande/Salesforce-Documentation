@@ -118,12 +118,8 @@ eventpage.js
 
     handlePassId(event) {
         this.eventid = event.detail;
-        this.Searchandshowevents();
-        this.modalscreen = false;
     }
 
-    Searchandshowevents() {
-        GetEventsData({ eventid: this.eventid })
 ```
 
 
