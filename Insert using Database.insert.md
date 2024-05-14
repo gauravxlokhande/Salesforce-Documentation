@@ -1,6 +1,6 @@
 # Database.Insert( List, false)
 
-## database..insert(list,false)  it works when we need to insert multple records and some records have error then if we user insert then all records get back from insertion insted of this if we use database.insert() and insert the records then only the records having problems or error get back insted all records get inserted successfull.
+## database.insert(list,false)  it works when we need to insert multple records and some records have error then if we user insert then all records get back from insertion insted of this if we use database.insert() and insert the records then only the records having problems or error get back insted all records get inserted successfull.
 
 Example:
 
