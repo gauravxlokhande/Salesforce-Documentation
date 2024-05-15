@@ -133,3 +133,5 @@ export default class Modal extends LightningElement {
 
 ```
 
+![image](https://github.com/gauravxlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/1be21ed8-a4b6-46f1-9821-04d2a1e175ee)
+
