@@ -114,3 +114,22 @@ export default class Modal extends LightningElement {
 }
 
 ```
+
+
+# Reusable Css For the all Components
+## modal.css
+```
+.body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+```
+## modal.css
+```
+.body{
+  --background-color: black;
+  --text-color: white;
+}
+
+```
+
