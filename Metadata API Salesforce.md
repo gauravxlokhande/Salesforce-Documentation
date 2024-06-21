@@ -1,3 +1,8 @@
+## basically the metadata api is that who is used to import the schema of any configuration in salesforce like OBJECT from one org and export it in another org. it not contains record it just contains object and their fields.
+
+## From metadata api we also able to create the configuration from apex itself like new object with fields.
+
+
 ## The Metadata API doesn't copy your entire Salesforce org, but rather it allows you to manage and transfer the configurations and customizations of your org. Here's a clearer way to think about it:
 
 ### What the Metadata API Does
