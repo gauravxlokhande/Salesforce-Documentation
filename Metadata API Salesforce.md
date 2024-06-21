@@ -2,6 +2,9 @@
 
 ## From metadata api we also able to create the configuration from apex itself like new object with fields.
 
+```
+https://www.avenoir.ai/post/creating-a-custom-object-in-salesforce-using-apex
+```
 
 ## The Metadata API doesn't copy your entire Salesforce org, but rather it allows you to manage and transfer the configurations and customizations of your org. Here's a clearer way to think about it:
 
