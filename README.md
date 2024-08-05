@@ -3,7 +3,9 @@
 ![image](https://github.com/gaurravlokhande/Javascript-for-Salesforce-Developers-Lwc-Components-1.md/assets/119065314/c2a69a00-2701-4fc7-9d10-ca76eb09bbdc)
 
 ![WhatsApp Image 2024-07-15 at 09 26 03_1ef6f2f4](https://github.com/user-attachments/assets/6b659a7b-1121-4373-900b-1b4485c2033b)
-
+```
+https://youtu.be/VgmR2x8_GUY?si=rUb2lIQdNfAWVww5
+```
 
 ## Create a movie search website uing lwc
 <p>refer To clear all the optimized concepts regarding lwc website.</p>
