@@ -13,7 +13,7 @@ https://youtu.be/VgmR2x8_GUY?si=rUb2lIQdNfAWVww5
 ```
 https://youtu.be/m0NxaFvuyZs?si=A013doGe11Axfei5
 ```
-
+### OWD sets the baseline access level for records, while profile permissions determine the specific access users have to those records.
 
 ## Disable any button if any input field is empty / u want a value from user forcefully
 
