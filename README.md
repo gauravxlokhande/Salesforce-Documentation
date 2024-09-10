@@ -6,7 +6,8 @@
 ```
 https://youtu.be/VgmR2x8_GUY?si=rUb2lIQdNfAWVww5
 ```
-
+```
+NOTE: PROFILE-> OWN RECORDS ACCESS , OWD: OTHERS Records access,   OR OWD+PROFILE for access to others records to peform actions.
 ### OWD sets the baseline access level for records, while profile permissions determine the specific access users have to those records.
 With OWD set to Private and profile permissions set to Create and Read:
 
